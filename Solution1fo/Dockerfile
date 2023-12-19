@@ -1,18 +1,22 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
-# copy csproj and restore as distinct layers
-COPY *.sln .
-COPY aspnetapp/*.csproj ./aspnetapp/
-RUN dotnet restore
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["Solution1fo/Solution1fo.csproj", "Solution1fo/"]
+RUN dotnet restore "./Solution1fo/./Solution1fo.csproj"
+COPY . .
+WORKDIR "/src/Solution1fo"
+RUN dotnet build "./Solution1fo.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# copy everything else and build app
-COPY aspnetapp/. ./aspnetapp/
-WORKDIR /source/aspnetapp
-RUN dotnet publish -c release -o /app --no-restore
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./Solution1fo.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# final stage/image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM base AS final
 WORKDIR /app
-COPY --from=build /app ./
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Solution1fo.dll"]
+
+
