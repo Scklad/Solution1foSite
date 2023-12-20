@@ -13,6 +13,11 @@ namespace Solution1fo.Controllers
             _logger = logger;
         }
 
+        public string Test()
+        {
+            return "200 OK";
+        }
+
         public IActionResult Index()
         {
             return View();
