@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Solution1fo.Models;
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Solution1fo.Controllers
 {
@@ -23,6 +24,13 @@ namespace Solution1fo.Controllers
             return View();
         }
 
+        [Route("/accueil")]
+        public IActionResult Accueil()
+        {
+            return View("Index");
+        }
+
+        [Route("/mentions-legales")]
         public IActionResult Privacy()
         {
             return View();
@@ -32,6 +40,12 @@ namespace Solution1fo.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Route("/contact")]
+        public IActionResult Contact()
+        {
+            return View();
         }
     }
 }
