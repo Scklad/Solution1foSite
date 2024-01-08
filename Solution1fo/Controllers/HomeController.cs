@@ -14,11 +14,6 @@ namespace Solution1fo.Controllers
             _logger = logger;
         }
 
-        public string Test()
-        {
-            return "200 OK";
-        }
-
         public IActionResult Index()
         {
             return View();
@@ -44,6 +39,18 @@ namespace Solution1fo.Controllers
 
         [Route("/contact")]
         public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [Route("/realisation")]
+        public IActionResult Realisation()
+        {
+            return View();
+        }
+
+        [Route("/send-contact")]
+        public IActionResult SendContact(string nom, string prenom, string email, string tel, string demande)
         {
             return View();
         }

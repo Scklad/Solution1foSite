@@ -52,8 +52,8 @@ span {
 h1 {
     color: #0CB859;
     margin-bottom: 50px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
+    /*background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;*/
 }
 
 h2 {
@@ -79,16 +79,20 @@ p {
     text-align: left;
 }
 
+#header_home_page {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 #header_home_page > div > h2 {
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
+    /*background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;*/
 }
 
 #header_home_page > div > p {
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
+    /*background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;*/
 }
 
 .img_accueil {
@@ -101,4 +105,43 @@ p {
     background-image: url(/img/bg_home_page.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.contact_form {
+    margin-top: 50px;
+    background-color: #545454;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.contact_form > form > input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact_form > form > textarea {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact_form > form > h2 {
+    text-align: center;
+    color: #0CB859;
+}
+
+.contact_form > form > span {
+    font-size: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact_form > form > button {
+    background-color: #0CB859 !important;
+    font-weight: bold;
+    width: 40%;
+}
+
+.contact_form > form > button:hover {
+    background-color: #4CF899 !important;
 }
