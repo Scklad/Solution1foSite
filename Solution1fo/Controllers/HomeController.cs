@@ -1,3 +1,4 @@
+using Homea.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Solution1fo.Models;
 using System.Diagnostics;
@@ -52,6 +53,9 @@ namespace Solution1fo.Controllers
         [Route("/send-contact")]
         public IActionResult SendContact(string nom, string prenom, string email, string tel, string demande)
         {
+            MailSenderController ms = new MailSenderController("");
+            string content = "Nom : " + nom + "<br>Prenom : " + prenom + "<br>Email : " + email + "<br>Tel : " + tel + "<br>Demande : " + demande;
+            ms.sendMail(email, content, "Demande de contact");
             return View();
         }
     }
