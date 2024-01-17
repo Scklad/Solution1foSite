@@ -33,49 +33,55 @@ namespace Homea.Controllers
             {
                 return send;
             }*/
-
-            var message = new MimeMessage();
-
-            message.From.Add(new MailboxAddress("Solution1fo", "noreply@solution1fo.fr"));
-            message.To.Add(new MailboxAddress("", email));
-            message.Subject = subject;
-
-            var builder = new BodyBuilder();
-            content += " ";
-
-
-            builder.HtmlBody = content;
-
-            if (cv != null)
+            if (email == "" || email == null)
             {
-                if (cv.Length > 0)
+                send = false;
+            }
+            else
+            {
+                var message = new MimeMessage();
+
+                message.From.Add(new MailboxAddress("Solution1fo", "noreply@solution1fo.fr"));
+                message.To.Add(new MailboxAddress("", email));
+                message.Subject = subject;
+
+                var builder = new BodyBuilder();
+                content += " ";
+
+
+                builder.HtmlBody = content;
+
+                if (cv != null)
                 {
-                    using (var ms = new MemoryStream())
+                    if (cv.Length > 0)
                     {
-                        cv.CopyTo(ms);
-                        byte[] fileBytes = ms.ToArray();
-                        builder.Attachments.Add(cv.FileName, fileBytes);
+                        using (var ms = new MemoryStream())
+                        {
+                            cv.CopyTo(ms);
+                            byte[] fileBytes = ms.ToArray();
+                            builder.Attachments.Add(cv.FileName, fileBytes);
+                        }
                     }
                 }
-            }
 
-            message.Body = builder.ToMessageBody();
+                message.Body = builder.ToMessageBody();
 
-            try
-            {
-                using (var client = new MailKit.Net.Smtp.SmtpClient())
+                try
                 {
-                    client.Connect("solution1fo.fr", 25, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
-                    client.Authenticate("solution1fo", "<Jmy6{5<OW<dm1iC*yId");
+                    using (var client = new MailKit.Net.Smtp.SmtpClient())
+                    {
+                        client.Connect("solution1fo.fr", 587, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
+                        client.Authenticate("solution1fo", "<Jmy6{5<OW<dm1iC*yId");
 
-                    client.Send(message);
-                    client.Disconnect(true);
-                    send = true;
+                        client.Send(message);
+                        client.Disconnect(true);
+                        send = true;
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
 
             return send;
