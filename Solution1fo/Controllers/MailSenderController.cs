@@ -71,7 +71,7 @@ namespace Homea.Controllers
                     using (var client = new MailKit.Net.Smtp.SmtpClient())
                     {
                         client.Connect("solution1fo.fr", 587, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
-                        client.Authenticate("solution1fo", "<Jmy6{5<OW<dm1iC*yId");
+                        client.Authenticate("solution1fo", "wDy!xN9FL@dOFx$~CgSK");
 
                         client.Send(message);
                         client.Disconnect(true);
