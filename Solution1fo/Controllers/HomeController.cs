@@ -53,9 +53,21 @@ namespace Solution1fo.Controllers
         [Route("/send-contact")]
         public IActionResult SendContact(string nom, string prenom, string email, string tel, string demande)
         {
-            MailSenderController ms = new MailSenderController("");
-            string content = "Nom : " + nom + "<br>Prenom : " + prenom + "<br>Email : " + email + "<br>Tel : " + tel + "<br>Demande : " + demande;
-            ms.sendMail(email, content, "Demande de contact");
+            string auth = "";
+            if(email != null && email != "")
+            {
+                if (Environment.GetEnvironmentVariable("INTERN") != null)
+                {
+                    auth = Environment.GetEnvironmentVariable("INTERN");
+                }
+                MailSenderController ms = new MailSenderController(auth);
+                string content = "Nom : " + nom + "<br>Prenom : " + prenom + "<br>Email : " + email + "<br>Tel : " + tel + "<br>Demande : " + demande;
+                string content_customers = "Bonjour, <br><br>Votre demande de contact à bien été prise en compte, <br>je prendrais contact avec vous aussi rapidement que possible.<br><br>Je vous souhaite une excellente journée,<br><br>Cordialement,<br>CHEREAULT Damien";
+                string email_contact = "contact@solution1fo.fr";
+                string subject = "Demande de contact";
+                ms.sendMail(email_contact, content, subject);
+                ms.sendMail(email, content_customers, subject);
+            }
             return View();
         }
     }

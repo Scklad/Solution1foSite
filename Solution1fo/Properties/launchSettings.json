@@ -31,7 +31,12 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "environmentVariables": {
         "ASPNETCORE_HTTPS_PORTS": "8081",
-        "ASPNETCORE_HTTP_PORTS": "8080"
+        "ASPNETCORE_HTTP_PORTS": "8080",
+        "SMTP": "solution1fo.fr",
+        "SMTP_PORT": "587",
+        "SMTP_LOGIN": "solution1fo",
+        "SMTP_PWD": "wDy!xN9FL@dOFx$~CgSK",
+        "INTERN": "s2wuhA5Ng1rK5cOQFQH0"
       },
       "publishAllPorts": true,
       "useSSL": true

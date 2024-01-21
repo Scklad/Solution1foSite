@@ -29,10 +29,10 @@ namespace Homea.Controllers
         {
             bool send = false;
 
-            /*if (authorization != Environment.GetEnvironmentVariable("INTERN"))
+            if (authorization != Environment.GetEnvironmentVariable("INTERN"))
             {
                 return send;
-            }*/
+            }
             if (email == "" || email == null)
             {
                 send = false;
@@ -70,8 +70,13 @@ namespace Homea.Controllers
                 {
                     using (var client = new MailKit.Net.Smtp.SmtpClient())
                     {
-                        client.Connect("solution1fo.fr", 587, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
-                        client.Authenticate("solution1fo", "wDy!xN9FL@dOFx$~CgSK");
+                        int port = 0;
+                        if (Environment.GetEnvironmentVariable("SMTP_PORT") != null)
+                        {
+                            port = int.Parse(Environment.GetEnvironmentVariable("SMTP_PORT"));
+                        }
+                        client.Connect(Environment.GetEnvironmentVariable("SMTP"), port, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
+                        client.Authenticate(Environment.GetEnvironmentVariable("SMTP_LOGIN"), Environment.GetEnvironmentVariable("SMTP_PWD"));
 
                         client.Send(message);
                         client.Disconnect(true);
@@ -87,16 +92,16 @@ namespace Homea.Controllers
             return send;
         }
 
-        public bool sendtestMail()
+        /*public bool sendtestMail()
         {
             bool send = false;
             string email = "damienchereault@gmail.com";
-            string content = "test relay from api";
+            string content = "test relay";
             string subject = "test relay";
 
             send = sendMail(email, content, subject);
 
             return send;
-        }
+        }*/
     }
 }
