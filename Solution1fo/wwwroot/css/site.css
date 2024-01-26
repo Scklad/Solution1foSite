@@ -192,3 +192,82 @@ p {
     width: 80%;
     margin-bottom: 50px;
 }
+
+.circle-icon {
+    border-radius: 50%;
+    padding: 10px 10px;
+    width: 5em;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border: 3px solid #0CB859 !important;
+    margin: auto !important;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 20px !important;
+    color: #0CB859 !important;
+}
+
+    .circle-icon i {
+        color: #0CB859 !important;
+        font-size: 30px !important;
+        transition: color 0.3s;
+    }
+
+    .circle-icon span {
+        color: #0CB859 !important;
+        font-size: 30px !important;
+        transition: color 0.3s;
+    }
+
+.circle-icon:hover {
+    background-color: #0CB859 !important;
+    color: #FFFFFF !important;
+}
+
+    .circle-icon:hover i {
+        color: #FFFFFF !important;
+    }
+
+    .circle-icon:hover span {
+        color: #FFFFFF !important;
+    }
+
+.bg-black h2 {
+    color: #0CB859 !important;
+}
+
+.bg-black span {
+    color: #0CB859 !important;
+}
+
+.bg-black div {
+    color: #FFFFFF !important;
+}
+
+.bg-black .circle-icon {
+    background-color: #000000 !important;
+    border-color: #FFFFFF !important;
+}
+
+.bg-black .circle-icon span{
+    color: #FFFFFF !important;
+}
+
+    .bg-black .circle-icon:hover {
+        background-color: #FFFFFF !important;
+    }
+
+    .bg-black .circle-icon:hover span {
+        color: #000000 !important;
+    }
+
+#navbar.navbar-dark.bg-opaque.box-shadow.navbar-collapse.show {
+    background-color: rgba(0, 0, 0, 1) !important; /* Changez cette couleur selon vos préférences */
+    transition: background-color 0.3s; /* Ajout de transition pour un effet en douceur */
+}
+
+#navbar.navbar-dark.bg-opaque.box-shadow.navbar-collapse.show .navbar-toggler-icon {
+    background-color: rgba(0, 0, 0, 1) !important; /* Changez cette couleur selon vos préférences */
+}
