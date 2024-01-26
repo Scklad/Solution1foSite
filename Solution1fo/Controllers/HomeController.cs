@@ -70,5 +70,23 @@ namespace Solution1fo.Controllers
             }
             return View();
         }
+
+        [Route("/competences")]
+        public IActionResult Competences()
+        {
+            return View();
+        }
+
+        [Route("/services")]
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        [Route("/tarifs")]
+        public IActionResult Tarifs()
+        {
+            return View();
+        }
     }
 }
