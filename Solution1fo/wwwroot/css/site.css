@@ -205,7 +205,7 @@ p {
     color: #0CB859;
 }
 
-    .contact_form > form > div >div > div {
+    .contact_form > form > div > div > div {
         margin-top: 20px;
         margin-bottom: 20px;
     }
@@ -218,17 +218,20 @@ p {
         }
 
         .contact_form > form > div > div > div > button {
-            background-color: #000000 !important;
+            background-color: #0CB859 !important;
             color: #FFFFFF !important;
             border-radius: 0px !important;
             font-weight: bold;
-            margin: auto;
-            width: 40%;
+            margin-left: auto;
+            width: 70%;
+            padding: 10px 0px;
+            transition: 0.9s;
         }
 
             .contact_form > form > div > div > div > button:hover {
-                background-color: #222222 !important;
+                background-color: #000000 !important;
                 color: #0CB859 !important;
+                transition: 0.9s;
             }
 
 #carousel_realisation {
@@ -348,4 +351,13 @@ p {
 
 #navbar {
     z-index: 10 !important;
+}
+
+.radio_justify {
+    text-align: justify-all !important;
+}
+
+.mail_sended {
+    margin-top: 300px;
+    text-align: center;
 }
