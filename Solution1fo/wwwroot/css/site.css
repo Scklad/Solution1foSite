@@ -63,6 +63,10 @@ h2 {
     text-align: left;
 }
 
+h3 {
+    color: #0CB859;
+}
+
 .nav-link {
     color: #ffffff !important;
     text-transform: uppercase !important;
@@ -128,43 +132,104 @@ p {
 }
 
 .contact_form {
-    margin-top: 50px;
-    background-color: #545454;
-    border-radius: 10px;
+    margin-top: 110px;
+    /*background-color: rgba(0, 0, 0, 0.6) !important;*/
+    z-index: 0;
+    border-radius: 0px;
     padding: 10px;
     text-align: center;
 }
 
-.contact_form > form > input {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    input {
+        border-radius: 0px !important;
+        width: 100%;
+    }
+
+    /*input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 50% !important;
+    }
+
+        input[type="radio"]:checked {
+            /*border: 5px #0CB859 solid !important;
+            box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0) !important;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px !important;
+            box-sizing: border-box;
+            border: 5px #0CB859 solid !important;
+            background-color: none !important;
+            color: #FFFFFF !important;
+        }
+
+        input[type="radio"]:focus {
+            border: 5px #0CB859 solid !important;
+            box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0) !important;
+        }*/
+
+
+
+.form-check-input:checked {
+    background-color: #0CB859; /* Couleur de fond des boutons radio cochés */
+    border-color: #0CB859; /* Couleur de la bordure des boutons radio cochés */
 }
 
-.contact_form > form > textarea {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(12, 184, 89, 0.5); /* Effet de mise au point pour les boutons radio */
 }
+
+/* Couleur de la bordure des boutons radio non cochés */
+.form-check-input {
+    border-color: #000000;
+    border-radius: 50% !important;
+}
+
+/* Couleur du texte des labels des boutons radio */
+.form-check-label {
+    color: #000000;
+}
+
+    textarea {
+        border-radius: 0px !important;
+        width: 100%;
+    }
 
 .contact_form > form > h2 {
+    text-align: center;
+    color: #000000;
+}
+
+.contact_form > form > h2 > span {
     text-align: center;
     color: #0CB859;
 }
 
-.contact_form > form > span {
-    font-size: 10px;
-    color: white;
-    margin-bottom: 20px;
-}
+    .contact_form > form > div >div > div {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
-.contact_form > form > button {
-    background-color: #0CB859 !important;
-    font-weight: bold;
-    width: 40%;
-}
+        .contact_form > form > div > div > div > span {
+            border-radius: 0px !important;
+            background-color: #000000 !important;
+            color: #0CB859 !important;
+            border: none !important;
+        }
 
-.contact_form > form > button:hover {
-    background-color: #4CF899 !important;
-}
+        .contact_form > form > div > div > div > button {
+            background-color: #000000 !important;
+            color: #FFFFFF !important;
+            border-radius: 0px !important;
+            font-weight: bold;
+            margin: auto;
+            width: 40%;
+        }
+
+            .contact_form > form > div > div > div > button:hover {
+                background-color: #222222 !important;
+                color: #0CB859 !important;
+            }
 
 #carousel_realisation {
     padding-top: 50px !important;
@@ -270,4 +335,17 @@ p {
 
 #navbar.navbar-dark.bg-opaque.box-shadow.navbar-collapse.show .navbar-toggler-icon {
     background-color: rgba(0, 0, 0, 1) !important; /* Changez cette couleur selon vos préférences */
+}
+
+.form-control {
+    border-color: #000000;
+}
+
+.form-control:focus {
+    border-color: #0CB859;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(12, 161, 84, 0.6);
+}
+
+#navbar {
+    z-index: 10 !important;
 }

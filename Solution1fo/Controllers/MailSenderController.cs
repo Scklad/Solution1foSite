@@ -25,7 +25,7 @@ namespace Homea.Controllers
             authorization = auth;
         }
 
-        public bool sendMail(string email, string content, string subject, IFormFile cv = null)
+        public bool sendMail(string email, string content, string subject, IFormFile file = null)
         {
             bool send = false;
 
@@ -51,15 +51,15 @@ namespace Homea.Controllers
 
                 builder.HtmlBody = content;
 
-                if (cv != null)
+                if (file != null)
                 {
-                    if (cv.Length > 0)
+                    if (file.Length > 0)
                     {
                         using (var ms = new MemoryStream())
                         {
-                            cv.CopyTo(ms);
+                            file.CopyTo(ms);
                             byte[] fileBytes = ms.ToArray();
-                            builder.Attachments.Add(cv.FileName, fileBytes);
+                            builder.Attachments.Add(file.FileName, fileBytes);
                         }
                     }
                 }

@@ -51,7 +51,7 @@ namespace Solution1fo.Controllers
         }
 
         [Route("/send-contact")]
-        public IActionResult SendContact(string nom, string prenom, string email, string tel, string demande)
+        public IActionResult SendContact(string nom, string prenom, string email, string tel, string demande, string type_projet, string status, string entreprise_name = "", string association_name = "", IFormFile file = null)
         {
             string auth = "";
             if(email != null && email != "")
@@ -61,11 +61,20 @@ namespace Solution1fo.Controllers
                     auth = Environment.GetEnvironmentVariable("INTERN");
                 }
                 MailSenderController ms = new MailSenderController(auth);
-                string content = "Nom : " + nom + "<br>Prenom : " + prenom + "<br>Email : " + email + "<br>Tel : " + tel + "<br>Demande : " + demande;
+                string content = "Nom : " + nom + "<br>Prenom : " + prenom + "<br>Email : " + email + "<br>Tel : " + tel + "<br>Status du client : " + status;
+                if(association_name != "")
+                {
+                    content += "<br>Nom de l\'association : " + association_name;
+                }
+                else if(entreprise_name != "")
+                {
+                    content += "<br>Nom de l\'entreprise : " + entreprise_name;
+                }
+                content += "<br>Type de projet : " + type_projet + "<br>Demande : " + demande;
                 string content_customers = "Bonjour, <br><br>Votre demande de contact à bien été prise en compte, <br>je prendrais contact avec vous aussi rapidement que possible.<br><br>Je vous souhaite une excellente journée,<br><br>Cordialement,<br>CHEREAULT Damien";
                 string email_contact = "contact@solution1fo.fr";
                 string subject = "Demande de contact";
-                ms.sendMail(email_contact, content, subject);
+                ms.sendMail(email_contact, content, subject, file);
                 ms.sendMail(email, content_customers, subject);
             }
             return View();

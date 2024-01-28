@@ -23,10 +23,10 @@ var observer = new MutationObserver(function (mutations) {
         // Vérifiez si la classe a changé
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
             // La classe a changé, effectuez votre action ici
-            console.log('La classe a changé : ', element.className);
+            //console.log('La classe a changé : ', element.className);
 
             // Appelez votre fonction ou effectuez votre action ici
-            votreFonction();
+            bg_buger_menu();
         }
     });
 });
@@ -36,8 +36,7 @@ var config = { attributes: true, attributeFilter: ['class'] };
 observer.observe(element, config);
 
 // Fonction à exécuter lorsque la classe change
-function votreFonction() {
-    // Votre code ici
+function bg_buger_menu() {
     var header = document.getElementById("navbar");
     var navbar_deployed = document.getElementById("navbar_deployed");
     if (navbar_deployed.classList.contains("show")) {
