@@ -2,83 +2,84 @@
     ViewData["Title"] = "Contact";
 }
 
-<div class="container-fluid row">
-    <div class="col-xs-12 col-lg-1"></div>
-    <div class="contact_form col-xs-12 col-lg-10">
-        <!--<h1>Demander un devis gratuit</h1>-->
-        <form action="send-contact" method="post" enctype="multipart/form-data" class="mb-5">
-            <h2>Demandez votre devis personnalisé et <span>gratuit</span> dès maintenant et donnez vie à votre projet informatique !</h2>
-            <div class="row">
-                <div class="col-xs-12 col-lg-6">
-                    <h3>Vos coordonnées</h3>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                        <input class="form-control" type="text" name="nom" placeholder="Nom *" required />
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                        <input class="form-control" type="text" name="prenom" placeholder="Prenom *" required />
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-envelope-at-fill"></i></span>
-                        <input class="form-control" type="email" name="email" placeholder="adresse@email.com *" required />
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-phone-fill"></i></span>
-                        <input class="form-control" type="tel" name="tel" placeholder="06 06 06 06 06 *" required />
-                    </div>
-                    <div class="radio_justify">
-                        <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="entreprise" value="entreprise" checked>
-                            <label class="form-check-label" for="entreprise">
-                                Entreprise
-                            </label>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-lg-1"></div>
+        <div class="container_page col-xs-12 col-lg-10">
+            <!--<h1>Demander un devis gratuit</h1>-->
+            <form action="send-contact" method="post" enctype="multipart/form-data" class="mb-5">
+                <h2>Demandez votre devis personnalisé et <span>gratuit</span> dès maintenant et donnez vie à votre projet informatique !</h2>
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6">
+                        <h3>Vos coordonnées</h3>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                            <input class="form-control" type="text" name="nom" placeholder="Nom *" required />
                         </div>
-                        <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="association" value="association">
-                            <label class="form-check-label" for="association">
-                                Association
-                            </label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                            <input class="form-control" type="text" name="prenom" placeholder="Prenom *" required />
                         </div>
-                        <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="particulier" value="particulier">
-                            <label class="form-check-label" for="particulier">
-                                Particulier
-                            </label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope-at-fill"></i></span>
+                            <input class="form-control" type="email" name="email" placeholder="adresse@email.com *" required />
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-phone-fill"></i></span>
+                            <input class="form-control" type="tel" name="tel" placeholder="06 06 06 06 06 *" required />
+                        </div>
+                        <div class="radio_justify">
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="entreprise" value="entreprise" checked>
+                                <label class="form-check-label" for="entreprise">
+                                    Entreprise
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="association" value="association">
+                                <label class="form-check-label" for="association">
+                                    Association
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="particulier" value="particulier">
+                                <label class="form-check-label" for="particulier">
+                                    Particulier
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-group" id="entreprise_group">
+                            <span class="input-group-text"><i class="bi bi-buildings-fill"></i></span>
+                            <input class="form-control" type="text" name="entreprise_name" id="entreprise_name" placeholder="Entreprise *" required />
+                        </div>
+                        <div class="input-group visually-hidden" id="association_group">
+                            <span class="input-group-text"><i class="bi bi-building-fill"></i></span>
+                            <input class="form-control" type="text" name="association_name" id="association_name" placeholder="Association *" />
                         </div>
                     </div>
-                    <div class="input-group" id="entreprise_group">
-                        <span class="input-group-text"><i class="bi bi-buildings-fill"></i></span>
-                        <input class="form-control" type="text" name="entreprise_name" id="entreprise_name" placeholder="Entreprise *" required />
-                    </div>
-                    <div class="input-group visually-hidden" id="association_group">
-                        <span class="input-group-text"><i class="bi bi-building-fill"></i></span>
-                        <input class="form-control" type="text" name="association_name" id="association_name" placeholder="Association *" />
+                    <div class="col-xs-12 col-lg-6">
+                        <h3>Votre demande</h3>
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="type_projet" placeholder="Type de projet" required />
+                            <span class="input-group-text"><i class="bi bi-file-earmark-text-fill"></i></span>
+                        </div>
+                        <div class="input-group">
+                            <textarea placeholder="Votre demande ... *" class="form-control" rows="9" name="demande" id="demande" required></textarea>
+                            <span class="input-group-text"><i class="bi bi-journal-richtext"></i></span>
+                        </div>
+                        <div class="input-group">
+                            <input class="form-control" type="file" name="file" placeholder="Fichier ..." />
+                            <span class="input-group-text"><i class="bi bi-file-earmark-text-fill"></i></span>
+                        </div>
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-default">Envoyer <i class="bi bi-send-fill"></i></button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-lg-6">
-                    <h3>Votre demande</h3>
-                    <div class="input-group">
-                        <input class="form-control" type="text" name="type_projet" placeholder="Type de projet" required />
-                        <span class="input-group-text"><i class="bi bi-file-earmark-text-fill"></i></span>
-                    </div>
-                    <div class="input-group">
-                        <textarea placeholder="Votre demande ... *" class="form-control" rows="9" name="demande" id="demande" required></textarea>
-                        <span class="input-group-text"><i class="bi bi-journal-richtext"></i></span>
-                    </div>
-                    <div class="input-group">
-                        <input class="form-control" type="file" name="file" placeholder="Fichier ..." />
-                        <span class="input-group-text"><i class="bi bi-file-earmark-text-fill"></i></span>
-                    </div>
-                    <div class="input-group">
-                        <button type="submit" class="btn btn-default">Envoyer <i class="bi bi-send-fill"></i></button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <h4>
-            Merci de faire confiance à <span class="site_name">Solution1fo</span> - Votre partenaire informatique freelance.
-        </h4>
+            </form>
+            <h4>
+                Merci de faire confiance à <span class="site_name">Solution1fo</span> - Votre partenaire informatique freelance.
+            </h4>
+        </div>
     </div>
-    <div class="col-3"></div>
 </div>
