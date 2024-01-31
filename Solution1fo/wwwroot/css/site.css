@@ -107,6 +107,7 @@ p {
         text-transform: capitalize !important;
         border: none !important;
         padding: 0px !important;
+        font-size: 55px !important;
     }
 
 #header_home_page > div > h2 {
@@ -404,6 +405,12 @@ p {
 
 .list-group-item > div > div > span {
     color : #0CB859 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.list-group-item > span {
+    color: #0CB859 !important;
     text-transform: uppercase;
     font-weight: bold;
 }

@@ -27,7 +27,13 @@ namespace Solution1fo.Controllers
         }
 
         [Route("/mentions-legales")]
-        public IActionResult Privacy()
+        public IActionResult MentionsLegales()
+        {
+            return View();
+        }
+        
+        [Route("/politique-de-confidentialite")]
+        public IActionResult PolitiqueDeConfidentialite()
         {
             return View();
         }
