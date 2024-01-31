@@ -54,8 +54,6 @@ span {
 h1 {
     color: #0CB859;
     text-transform: uppercase;
-    /*background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;*/
 }
 
 h2 {
@@ -367,4 +365,45 @@ p {
 .mail_sended {
     margin-top: 300px;
     text-align: center;
+}
+
+.progress_bg {
+    background-color: #0CB859 !important;
+    text-align: left;
+}
+
+    .progress_bg > span {
+        margin: 0px !important;
+        padding: 0px !important;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-weight: bold;
+        height: 30px !important;
+        vertical-align: central !important;
+        text-align: center !important;
+        padding: 5px 20px !important;
+    }
+
+    .progress-bar-text {
+        position: absolute;
+        color: #fff; /* Couleur du texte */
+        background-color: #2CD879; /* Couleur de fond au niveau du texte */
+        padding: 5px 15px; /* Espacement autour du texte */
+    }
+
+.progress {
+    margin: 20px 0px !important;
+    height: 30px !important;
+    border-radius: 0% !important;
+}
+
+.list-group-item > span {
+    color : #0CB859 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.h3-competence {
+    color: #545454 !important;
+    text-transform: uppercase;
 }
