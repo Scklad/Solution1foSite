@@ -50,8 +50,16 @@
     </div>
 
     <footer class="footer text-muted bg-black">
-        <div class="container text-white">
-            &copy; 2023 - Solution1fo - <a asp-area="" asp-controller="Home" asp-action="MentionsLegales">Mentions légales</a> - <a asp-area="" asp-controller="Home" asp-action="PolitiqueDeConfidentialite">Politique de confidentialité</a>
+        <div class="container-fluid text-white row">
+            <div class="col-12 col-md-4 text-start text-md-center">
+                &copy; 2023 - Solution1fo
+            </div>
+            <div class="col-12 col-md-4 text-start text-md-center">
+                <a asp-area="" asp-controller="Home" asp-action="MentionsLegales">Mentions légales</a>
+            </div>
+            <div class="col-12 col-md-4  text-start text-md-center">
+                <a asp-area="" asp-controller="Home" asp-action="PolitiqueDeConfidentialite">Politique de confidentialité</a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

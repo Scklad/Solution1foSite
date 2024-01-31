@@ -18,8 +18,15 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+@media (max-width: 768px){
+    body {
+        margin-bottom: 180px;
+    }
+}
+
 
 #navbar_logo {
     width:70px;
