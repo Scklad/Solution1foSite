@@ -415,6 +415,12 @@ p {
     font-weight: bold;
 }
 
+.li-politique::before {
+    color: #0CB859 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 .h3-competence {
     color: #545454 !important;
     text-transform: uppercase;
