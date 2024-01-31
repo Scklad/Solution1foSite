@@ -397,7 +397,7 @@ p {
     border-radius: 0% !important;
 }
 
-.list-group-item > span {
+.list-group-item > div > div > span {
     color : #0CB859 !important;
     text-transform: uppercase;
     font-weight: bold;
