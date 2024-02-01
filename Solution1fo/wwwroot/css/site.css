@@ -437,3 +437,46 @@ p {
     margin-top: 50px !important;
     padding-top: 50px;
 }
+
+.dark-bg {
+    background-color: #22262A;
+    background-color: #000000;
+    margin: 15px !important;
+    padding: 15px !important;
+    min-height: 500px;
+    color: #949494;
+}
+
+.dark-bg > .title_span {
+    text-transform: uppercase;
+    color: #0CB859;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    .dark-bg > span {
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .dark-bg > button {
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background-color: #0CB859;
+        font-size: 16px;
+        width: 40%;
+        height: 30px;
+        vertical-align: central;
+        margin: auto;
+        position: relative;
+        bottom: 15px;
+    }
+
+hr {
+    border: 4px solid #FFFFFF !important;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
