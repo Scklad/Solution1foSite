@@ -400,7 +400,7 @@ p {
     .progress-bar-text {
         position: absolute;
         color: #fff; /* Couleur du texte */
-        background-color: #2CD879; /* Couleur de fond au niveau du texte */
+        /*background-color: #2CD879;*/ /* Couleur de fond au niveau du texte */
         padding: 5px 15px; /* Espacement autour du texte */
     }
 
